@@ -3,6 +3,9 @@ import styles from "./wallet.scss"
 import http from "../../http"
 import qs from "qs";
 import UAFormat from "ua-format-js";
+import {observer} from "mobx-react";
+import appStore from '../../store/index'
+@observer
 class Wallet extends React.Component{
   constructor(props) {
     super(props);
@@ -18,7 +21,7 @@ class Wallet extends React.Component{
   }
   componentDidMount() {
     this.getList()
-    console.log(this.state.ua)
+    console.log(this.state.ua,this.props)
     document.title = "平台币充值"
   }
   toRecord = ()=>{
@@ -58,6 +61,7 @@ class Wallet extends React.Component{
         appId: this.state.query.appId || this.state.query.gameId
       });
       if (res.state === 1) {
+        appStore.setDesc(res.desc)
         if (res.data.length > 0) {
           res.data.forEach(item => {
             item.isActive = false;
