@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, Link } from 'react-router'
 import './App.css';
-import {HashRouter, Switch} from "react-router-dom";
+import {HashRouter, Switch,Redirect} from "react-router-dom";
 import C1 from "./pages/c1/c1";
 import C2 from "./pages/c2/c2";
 import Wallet from './pages/wallet/wallet'
@@ -37,6 +37,7 @@ class App extends React.Component  {
                 <Route exact path="/C1" component={C1} />
                 <Route path="/C2" component={C2} />
                 <Route path="/wallet/index" component={Wallet} />
+                <Redirect from='/' to='/wallet/index?platformCoin=200&platformCoinName=金币'/>
                 <Route component={Error} />
               </Switch>
             </HashRouter>
