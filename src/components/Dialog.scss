@@ -1,0 +1,57 @@
+.dialog {
+  position: fixed;
+  transition: .7s ease-in-out;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  &.active{
+    display: flex;
+  }
+  .dialog__container {
+    width: 70%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    .dialog-content {
+      min-height: 80px;
+      flex: auto;
+      padding: 20px 10px;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .dialog-footer {
+      height: 50px;
+      display: flex;
+      border-top: 0.5px solid #e7e7e7;
+      position: relative;
+      div {
+        flex: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:first-child {
+          border-bottom-left-radius: 6px;
+        }
+        &:last-child {
+          border-bottom-right-radius: 6px;
+        }
+        &:active {
+          background: #e7e7e7;
+        }
+      }
+      .stress {
+        color: #ff9900;
+      }
+    }
+  }
+}
