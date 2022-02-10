@@ -10,7 +10,7 @@
     "less-loader": "^5.0.0",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "package": "^1.0.1",
     "react": "^16.9.0",
     "react-app-rewired": "^2.1.5",
